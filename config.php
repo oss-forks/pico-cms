@@ -1,5 +1,8 @@
 <?php 
 
+if (@file_exists(dirname(__FILE__)."/../../wiki/config.php"))
+	include(dirname(__FILE__)."/../../wiki/config.php");
+
 /*
 // Override any of the default settings below:
 
