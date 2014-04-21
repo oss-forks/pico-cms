@@ -89,9 +89,9 @@ class Pico {
 		$twig_vars = array(
 			'config' => $settings,
 			'base_dir' => rtrim(ROOT_DIR, '/'),
-			'base_url' => $settings['base_url'],
+			'base_url' => $settings['twig_base_url'],
 			'theme_dir' => THEMES_DIR . $settings['theme'],
-			'theme_url' => $settings['base_url'] .'/'. basename(THEMES_DIR) .'/'. $settings['theme'],
+			'theme_url' => $settings['twig_base_url'] .'/'. basename(THEMES_DIR) .'/'. $settings['theme'],
 			'site_title' => $settings['site_title'],
 			'meta' => $meta,
 			'content' => $content,
@@ -191,6 +191,7 @@ class Pico {
 		$defaults = array(
 			'site_title' => 'Pico',
 			'base_url' => $this->base_url(),
+			'twig_base_url' => $this->base_url(),
 			'theme' => 'default',
 			'date_format' => 'jS M Y',
 			'twig_config' => array('cache' => false, 'autoescape' => false, 'debug' => false),
